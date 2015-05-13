@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('publicApp', [
+  .module('riskApp', [
     'ngAnimate',
     'ngResource',
     'ngRoute'
@@ -19,10 +19,6 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
       })
       .otherwise({
         redirectTo: '/'
