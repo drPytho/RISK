@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the publicApp
  */
-angular.module('publicApp')
+angular.module('riskApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
