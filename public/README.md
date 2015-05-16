@@ -4,11 +4,11 @@ This project is generated with [yo angular generator](https://github.com/yeoman/
 version 0.11.1.
 
 ## Getting started
-`npm install`
-`bower install`
-`gem update `gem list | cut -d ' ' -f 1`` (update all your gems)
-`grunt` (build everything)
-`grunt serve`
+1. `npm install`
+2. `bower install`
+3. ``gem update `gem list | cut -d ' ' -f 1` `` (update all your gems)
+4. `grunt` (build everything)
+5. `grunt serve`
 
 ## Build & development
 
