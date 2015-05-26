@@ -21,9 +21,7 @@ The classic game RISK.
 
 1. `npm install`
 2. `bower install`
-3. ``gem update `gem list | cut -d ' ' -f 1` `` (update all your gems)
-4. `grunt` (build everything)
-5. `grunt serve`
+4. `grunt` (build everything and launch the webserver)
 
 
 ## Build & development
