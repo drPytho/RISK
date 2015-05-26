@@ -4,8 +4,8 @@ The classic game RISK.
 
 ## File structure
 
- - **public** - All HTML/CSS/JS/images files etc. Everything that the user can access.
  - **web-server** - The backend server for the frontend (`public/`). Contains our API to get highscore, register, login, etc
+    - **public** - All HTML/CSS/JS/images files etc. Everything that the user can access.
  - **game-server** - The game, the whole game is executed on the server to prevent cheating
  - **chat-server** - This is our node.js chat server (the chat in the game)
 

@@ -4,3 +4,6 @@ dist
 .tmp
 .sass-cache
 bower_components
+*.css.map
+web-server/public/styles/main.css
+web-server/public/scripts/built.js
