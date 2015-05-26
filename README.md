@@ -1,17 +1,36 @@
-# NG-ProjectX
-I detta projekt skapar vi en online version av brädspelet RISK. 
+# RISK
+
+The classic game RISK.
+
+## File structure
+
+ - **public** - All HTML/CSS/JS/images files etc. Everything that the user can access.
+ - **web-server** - The backend server for the frontend (`public/`). Contains our API to get highscore, register, login, etc
+ - **game-server** - The game, the whole game is executed on the server to prevent cheating
+ - **chat-server** - This is our node.js chat server (the chat in the game)
+
+## The Stack
+ - Node.js as server for both the game, chat and as http server
+ - Angular.js for the website. hemsida.
+ - Canvas and TREE.js to create the game
+ - MongoDB as database
+ - Sass (SCSS)
 
 
-## Specifikationer / krav
- - Dokumentera mycket
- - Responsive design
- - Canvas eller WebGL
- - Databas
- - JSON + AJAX
+## Getting started
 
-## Vi använder oss av
- - Node.js som server för både spel, chatt och http
- - Angularjs för hemsida. Den sanvänds för att skapa nytt spel, gå med i ett existerand, kolla på ett gammalt, regestrera sig som ny spelare, logga in för att spela och stats.
- - Canvas och TREE.js för att skapa spelet
- - MongoDB för att spara Användare, Chattar och Spel.
- - Sass(SCSS) istället för CSS
+1. `npm install`
+2. `bower install`
+3. ``gem update `gem list | cut -d ' ' -f 1` `` (update all your gems)
+4. `grunt` (build everything)
+5. `grunt serve`
+
+
+## Build & development
+
+Run `grunt` for building and `grunt serve` for preview.
+
+
+## Testing
+
+We don't use TDD in this project since we are only two persons.
