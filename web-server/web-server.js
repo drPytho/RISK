@@ -42,15 +42,13 @@ app.use(jwtAuth.Authenticate);
 
 // Load index.html which will start the Angular.js app
 app.get('/', function (req, res) {
-    res.send('new text');
-    //res.sendfile(__dirname +'/public/main.html');
+    res.sendfile(__dirname +'/public/main.html');
 });
 
 
 
 
 // TODO: API for login, register, highscore etc
-
 var server = app.listen(3000, function () {
     var host = server.address().address;
     var port = server.address().port;
