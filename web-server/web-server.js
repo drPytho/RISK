@@ -2,23 +2,25 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
+var mongoose = require('mongoose');
 var fs = require('fs');
-var jwtAuth = require('./jwt-auth')();
+
+
 
 // Include information from server-info.json
 // This contains some secret strings usefull to the different serers
 // for things like authentication...
 var serverInfo = JSON.parse(fs.readFileSync(__dirname + '/../server-info.json', 'utf-8'));
 
+mongoose.connect("mongodb://localhost/" + serverInfo.database);
+
+var jwtAuth = require('./jwt-auth')(serverInfo.jwtSecret);
+
 var app = express();
 
 // Log all the action to the console and a file
 var accessLogStream = fs.createWriteStream(__dirname + '/../log/access.log', {flags: 'a'});
 app.use(morgan('dev', {stream:accessLogStream}));
-
-// And log it to a file
-
-
 
 // All CSS, JS and images files
 app.use(express.static(__dirname +'/public'));

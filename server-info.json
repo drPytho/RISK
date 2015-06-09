@@ -1,4 +1,5 @@
 {
-    "jwt-secret":"SUPER-SECRET... Change me",
-    "pepper":"Change me too, plz. Wow such amaze secure"
+    "jwtSecret":"SUPER-SECRET... Change me",
+    "pepper":"Change me too, plz. Wow such amaze secure",
+    "database":"risk"
 }
