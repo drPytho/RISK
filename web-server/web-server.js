@@ -29,21 +29,25 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 
 // If not ajax, redirect to index.html. Static resources still work.
-app.use(function(req, res, next){
-    if (!req.xhr){
-        // This is not an ajax request... redirect to index.html
-        res.redirect('/');
-    }
-    next();
-});
+// app.use(function(req, res, next){
+//     if (!req.xhr){
+//         // This is not an ajax request... redirect to index.html
+//         // res.redirect('/');
+//     }
+//     next();
+// });
 
-// Authenticate the user.
+// Authenticate the user. Probably skipp if its for the static folder.
 app.use(jwtAuth.Authenticate);
 
 // Load index.html which will start the Angular.js app
 app.get('/', function (req, res) {
-    res.sendfile(__dirname +'/public/index.html');
+    res.send('new text');
+    //res.sendfile(__dirname +'/public/main.html');
 });
+
+
+
 
 // TODO: API for login, register, highscore etc
 
