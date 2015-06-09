@@ -1,12 +1,32 @@
 var express = require('express');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var morgan = require('morgan');
+var fs = require('fs');
+var jwtAuth = require('./jwt-auth')();
+
+// Include information from server-info.json
+// This contains some secret strings usefull to the different serers
+// for things like authentication...
+var serverInfo = JSON.parse(fs.readFileSync(__dirname + '/../server-info.json', 'utf-8'));
+
 var app = express();
-var jwt-auth = require('./jwt-auth');
+
+// Log all the action to the console and a file
+var accessLogStream = fs.createWriteStream(__dirname + '/../log/access.log', {flags: 'a'});
+app.use(morgan('dev', {stream:accessLogStream}));
+
+// And log it to a file
+
 
 
 // All CSS, JS and images files
 app.use(express.static(__dirname +'/public'));
 
-// If not ajax, redirect to index.html
+app.use(cookieParser());
+app.use(bodyParser.json());
+
+// If not ajax, redirect to index.html. Static resources still work.
 app.use(function(req, res, next){
     if (!req.xhr){
         // This is not an ajax request... redirect to index.html
@@ -16,7 +36,7 @@ app.use(function(req, res, next){
 });
 
 // Authenticate the user.
-app.use(jwt-auth.Authenticate());
+app.use(jwtAuth.Authenticate);
 
 // Load index.html which will start the Angular.js app
 app.get('/', function (req, res) {
