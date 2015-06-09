@@ -15,8 +15,77 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <h1>Funkar.</h1>
-    <div ng-view></div>
+    <header class="primary">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#/">RISK</a>
+                </div>
+        
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#/">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#/">Highscore</a></li>
+                        <li><a href="#/">About</a></li>
+                    </ul>
+                </div>
+          </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Funkar.</h1>
+
+                <div ng-view></div>
+            </div>
+
+            <aside class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" id="panel-title">Login</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter username">
+                            </div>
+                            <div class="form-group">
+                                 <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Login &amp; Play!</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Stats</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <p>
+                            Online right now: <em>1337</em>
+                        </p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
     
 
     <!-- bower:js -->

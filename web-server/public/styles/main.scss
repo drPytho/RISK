@@ -1,3 +1,59 @@
+/**
+ * This project tries to use ITCSS (https://speakerdeck.com/dafed/managing-css-projects-with-itcss)
+ * Check out slide 48 for a TL;DR of IT CSS
+ */
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Settings
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+@import "settings.bootstrap";
+
+
+/*
+|--------------------------------------------------------------------------
+| Tools
+|--------------------------------------------------------------------------
+|
+| Mixins (like clearfix) and libraries (like bootstrap, foundation, gridsystems)
+| It's also here you can extend/modify the libraries behaivour
+|
+*/
+@import "../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+.container-fluid {
+    max-width: 1000px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Generic
+|--------------------------------------------------------------------------
+|
+| CSS resets goes here, like normalize.css
+|
+*/
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Base
+|--------------------------------------------------------------------------
+|
+| Just HTML selectors here, NO CLASSES.
+|
+*/
+
 body {
     font-family: Helvetica, sans-serif;
 }
@@ -5,3 +61,54 @@ body {
 h1 {
     color: #A2F5C3;
 }
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Objects
+|--------------------------------------------------------------------------
+|
+| Objects should be things like the media object, flag objects etc.
+| Things you reuse a lot. 
+|
+| Only abstract things, width, float, position.
+| Do not style things here (color:, background:, size:)
+|
+*/
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Components
+|--------------------------------------------------------------------------
+|
+| Style things here!
+|
+*/
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Trumps
+|--------------------------------------------------------------------------
+|
+| Things that always should be true. Like error messages are red.
+| !important is okay to use here.
+|
+*/
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Hacks
+|--------------------------------------------------------------------------
+|
+| Things that should be refactored into better code
+| PREFIX all hacks with "h-",
+| Like "h-colorGreen"
+|
+*/
