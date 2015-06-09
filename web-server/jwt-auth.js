@@ -7,11 +7,12 @@ module.exports = (function(/*mongoose,*/ secret){
     exp.Authenticate = function(req, res, next){
         // Is there a JWT passed alng??
         // Check cookies
+        req.jwt = req.jwt || {};
         req.jwt.isAuthed = false;
         req.jwt.userdata = null;
         var jwtCookie = req.cookies.jwt;
-        if (jwtCookie == ""){
-            next();
+        if (jwtCookie === undefined){
+            return next();
         }
         //Soppouse we have the token now..
         // Have we signed it??
