@@ -1,8 +1,22 @@
 var express = require('express');
 var app = express();
+var jwt-auth = require('./jwt-auth');
+
 
 // All CSS, JS and images files
 app.use(express.static(__dirname +'/public'));
+
+// If not ajax, redirect to index.html
+app.use(function(req, res, next){
+    if (!req.xhr){
+        // This is not an ajax request... redirect to index.html
+        res.redirect('/');
+    }
+    next();
+});
+
+// Authenticate the user.
+app.use(jwt-auth.Authenticate());
 
 // Load index.html which will start the Angular.js app
 app.get('/', function (req, res) {
