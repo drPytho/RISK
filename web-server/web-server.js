@@ -45,7 +45,7 @@ app.get('/', function (req, res) {
     res.sendfile(__dirname +'/public/main.html');
 });
 
-
+app.get('/account', require('./routes/account.js')(mongoose));
 
 
 // TODO: API for login, register, highscore etc

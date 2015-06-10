@@ -21,7 +21,7 @@ var userModel = {
         name:String, // Game name
         score:Number, // End score for player of game "name"
         // ... More game information
-        played:{type:Date, default:Date.now}, // Date played game,
+        played:{type:Date, default:Date.now} // Date played game,
 
     }],
     score:Number, // Update for every finnished game.
@@ -31,7 +31,7 @@ var userModel = {
     created:{type:Date, default:Date.now},
     secretCode:String, // Use this for email verification, password change and ...
     failedLogin:Number, // You can only fail to login... Lets say 5 times
-    accountStatus:Number,
+    accountStatus:Number
 }
 
 var userModelSchema = new Schema(userModel);
